@@ -5,7 +5,7 @@
     <h1> LABORATORY 5</h1>
     <h1>DASHBOARD</h1>
     <p>Hi, My Name is Noble Peter Jansen.</p>
-    <button href="../views/AboutApps.vue">Learn More</button>
+    <button>Learn More</button>
   </div>
   
   
