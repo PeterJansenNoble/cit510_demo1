@@ -61,7 +61,7 @@ function doCountVowel () {
 .stringtitle {
   text-align: center;
  
-  background-image: url('https://i.imgur.com/yGmrlyg.jpg');
+  
   background-size: cover;
   background-repeat: no-repeat;
   border-top: solid 1em #1d2920;

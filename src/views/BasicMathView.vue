@@ -72,7 +72,7 @@ RESULT :
 .caltitle {
   text-align: center;
   padding: 6em 0;
-  background-image: url('https://i.imgur.com/yGmrlyg.jpg');
+  
   background-size: cover;
   background-repeat: no-repeat;
   border-top: solid 1em #1d2920;
