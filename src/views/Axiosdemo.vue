@@ -9,10 +9,7 @@
     class="mx-auto my-12"
     max-width="1000"
     
-  > <v-img  center max-height="150"
-  max-width="250" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Axios_logo_%282020%29.svg/2560px-Axios_logo_%282020%29.svg.png">
-    
-  </v-img>
+  > 
     <v-card-title class="caltitle">AXIOS DEMO</v-card-title>
     <v-btn block  color="primary"
   elevation="3"
