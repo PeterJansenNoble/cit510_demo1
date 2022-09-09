@@ -6,7 +6,7 @@
       <v-toolbar color="teal" class="toolbar" app>
        <v-app-bar-nav-icon @click='toggleDrawer' class="toggledrawer"></v-app-bar-nav-icon>
       <v-toolbar-title >
-        <h1 class="noble-title">NOBLE</h1>
+        <h1 class="noble-title">Midterm Laboratory</h1>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -78,9 +78,13 @@
            { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/Dashboard' },
            { title: 'Math', icon: 'mdi-calculator', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-code-string', path: '/stringApp'},
+           { title: 'Quiz App', icon: 'mdi-help', path: '/QuizApp'},
            { title: 'About Vuetify', icon: 'mdi-receipt', path: '/Vuetify'},
           { title: 'About Me', icon: 'mdi-face', path: '/About'},
-          { title: 'Axios', icon: 'mdi-axis', path: '/Axios'},
+          { title: 'About Apps', icon: 'mdi-face', path: '/AboutApps'},
+          
+          
+         
         ])
         
 
@@ -112,10 +116,12 @@ aside {
 }
 .noble-title {
   color: white;
+  padding-top: 35px;
 }
 .toggle-drawer {
   color: white;
 }
+
 
 
 

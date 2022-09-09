@@ -6,6 +6,9 @@ import Vuetify from '../views/Vuetify.vue'
 import About from '../views/About.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Axios from '../views/Axiosdemo.vue'
+import AboutApps from '../views/AboutApps.vue'
+import QuizApp from '../views/QuizApp.vue'
+
 
 
 
@@ -47,6 +50,18 @@ const router = createRouter({
             name: 'Axiosdemo',
             component: Axios
           },
+          {
+            path: '/aboutapp',
+            name: 'AboutApp',
+            component: AboutApps
+          },
+          {
+            path: '/quizapp',
+            name: 'QuizApp',
+            component: QuizApp
+          },
+          
+          
     
     
   ]
