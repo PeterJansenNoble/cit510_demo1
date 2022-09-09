@@ -187,7 +187,11 @@ const NextQuestion = () => {
 				</label>
 			</div>
 			
-			<button 
+			<v-btn block 
+ 			 	elevation="9"
+  				small
+ 				x-large
+  				x-small
 				@click="NextQuestion" 
 				:disabled="!getCurrentQuestion.selected">
 				{{ 
@@ -197,7 +201,7 @@ const NextQuestion = () => {
 							? 'Select an option'
 							: 'Next question'
 				}}
-			</button>
+			</v-btn>
 		</section>
 
 		<section v-else>
@@ -304,7 +308,7 @@ button {
 	cursor: pointer;
 	padding: 0.5rem 1rem;
 	background-color: #00f57a;
-	color: #2d213f;
+	color: #ffffff;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 1.2rem;

@@ -51,7 +51,7 @@ body {
 
 .masthead {
   padding: 6em 0;
-  background-image: url('https://i.imgur.com/yGmrlyg.jpg');
+  
   background-size: cover;
   background-repeat: no-repeat;
   border-top: solid 1em #FFCF33;

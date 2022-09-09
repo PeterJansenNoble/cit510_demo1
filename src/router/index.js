@@ -51,8 +51,8 @@ const router = createRouter({
             component: Axios
           },
           {
-            path: '/aboutapp',
-            name: 'AboutApp',
+            path: '/aboutapps',
+            name: 'AboutApps',
             component: AboutApps
           },
           {

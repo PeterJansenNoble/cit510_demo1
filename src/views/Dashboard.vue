@@ -5,7 +5,7 @@
     <h1> LABORATORY 5</h1>
     <h1>DASHBOARD</h1>
     <p>Hi, My Name is Noble Peter Jansen.</p>
-    <button>Learn More</button>
+    <button href="../views/AboutApps.vue">Learn More</button>
   </div>
   
   
@@ -85,8 +85,8 @@ body {
 }
 
 .intro button {
-  background-color: #5edaf0;
-  color: #000;
+  background-color: teal;
+  color: rgb(255, 255, 255);
   padding: 10px 25px;
   border: none;
   border-radius: 5px;

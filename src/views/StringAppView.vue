@@ -6,9 +6,8 @@
     max-width="374"
     
   >
-  <v-container fluid >
   <v-card-title class="stringtitle"> STRING MANIPULATOR</v-card-title>
-
+  <v-container fluid >
    <v-text-field label="Enter a String" v-model="stringInput"></v-text-field>
 
    
@@ -25,14 +24,14 @@
   <br>
   <br>
   <br>
-     <p> Count Vowel</p>
-   {{vowelCount}}
-    <p> Count Constant /s</p>
-   {{consCount}}
-    <p> Count Numbers</p>
-   {{numCount}}
-    <p> Vowel Conversion to (*)</p>
-   {{convert}}
+     <p> Count Vowel /s : {{vowelCount}}</p>
+   
+    <p> Count Constant /s : {{consCount}}</p>
+   
+    <p> Count Numbers : {{numCount}}</p>
+   
+    <p> Vowel Conversion to (*) : {{convert}}</p>
+   
    </v-container>
  </v-card>  
 
