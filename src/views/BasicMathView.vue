@@ -14,12 +14,12 @@
 
    
 
-  <v-btn block  color="primary"
+  <v-btn block  color="#34495E"
   elevation="9"
   small
   x-large
   x-small
-  @click="doSum">Result</v-btn>
+  @click="doSum"><div class="resultbtn">Result</div></v-btn>
   <p></p>
   <br>
   <br>
@@ -71,6 +71,10 @@ RESULT :
 </script>
 
 <style>
+
+  .resultbtn {
+    color: white;
+  }
 .caltitle {
   text-align: center;
   padding: 6em 0;

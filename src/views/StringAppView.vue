@@ -14,12 +14,12 @@
  
     
  
-    <v-btn class="v-btn" block color="primary"
+    <v-btn class="v-btn" block color="#34495E"
       elevation="9"
       small
       x-large
       x-small
-      @click="doCountVowel">Get Result</v-btn>
+      @click="doCountVowel"><div class="getresbtn">Get Result</div></v-btn>
  
     
       <p></p>
@@ -59,6 +59,10 @@
  </script>
  
  <style>
+
+  .getresbtn {
+    color: white;
+  }
  .stringtitle {
    text-align: center;
   
