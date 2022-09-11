@@ -3,7 +3,7 @@
 	<main id="Home-page">
 		<main>
   <div class="intro">
-    <h1> LABORATORY 5</h1>
+    <h1> MIDTERM PROJECT</h1>
     <h1>DASHBOARD</h1>
     <p>Hi, My Name is Noble Peter Jansen.</p>
     <button>Learn More</button>
@@ -63,7 +63,7 @@ body {
   align-items: center;
   width: 100%;
   height: 1000px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://rare-gallery.com/uploads/posts/585349-book-desk-head.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../assets/dashboard.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
