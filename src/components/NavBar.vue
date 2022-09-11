@@ -3,7 +3,7 @@
   <nav class="nav-menu">
     
     
-      <v-toolbar color="teal" class="toolbar" app>
+      <v-toolbar color="#41B883" class="toolbar" app>
        <v-app-bar-nav-icon @click='toggleDrawer' class="toggledrawer"></v-app-bar-nav-icon>
       <v-toolbar-title >
         <h1 class="noble-title">Midterm Laboratory</h1>
@@ -45,14 +45,14 @@
       
       </v-toolbar>
       
-     <v-navigation-drawer color="Mint" v-model="drawer" >
+     <v-navigation-drawer color="#34495E" v-model="drawer" >
      <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
       <center>
 		<div center class="logo">
 			<img :src="logoURL" alt="Vue" /> 
 		</div>
   </center>
-       <v-list-item
+       <v-list-item color="white"
           v-for="item in items"
           :key="item.title"
           router 
@@ -69,6 +69,7 @@
 </template>
 
 <script setup>
+  
   import { ref } from 'vue'
   import logoURL from '../assets/logo.png'
     

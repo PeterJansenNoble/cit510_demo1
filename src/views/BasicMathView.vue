@@ -1,5 +1,5 @@
 <template>
-
+  
   <v-card
     :loading="loading"
     class="mx-auto my-12"
@@ -89,7 +89,7 @@ RESULT :
 }
 
 .body {
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
 }
 </style>
 

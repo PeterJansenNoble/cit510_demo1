@@ -1,3 +1,4 @@
+
 <template>
 	<main id="Home-page">
 		<main>
@@ -62,7 +63,7 @@ body {
   align-items: center;
   width: 100%;
   height: 1000px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://rare-gallery.com/uploads/posts/585349-book-desk-head.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,7 +86,7 @@ body {
 }
 
 .intro button {
-  background-color: teal;
+  background-color: #34495E;
   color: rgb(255, 255, 255);
   padding: 10px 25px;
   border: none;

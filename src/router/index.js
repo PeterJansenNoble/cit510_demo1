@@ -18,7 +18,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Dashboard
     },
     {
       path: '/stringApp',
