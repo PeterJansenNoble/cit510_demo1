@@ -192,8 +192,10 @@ const NextQuestion = () => {
   				small
  				x-large
   				x-small
+				color="#34495E"
 				@click="NextQuestion" 
 				:disabled="!getCurrentQuestion.selected">
+				<div class="text">
 				{{ 
 					getCurrentQuestion.index == questions.length - 1 
 						? 'Finish' 
@@ -201,6 +203,7 @@ const NextQuestion = () => {
 							? 'Select an option'
 							: 'Next question'
 				}}
+				</div>
 			</v-btn>
 		</section>
 
@@ -213,6 +216,10 @@ const NextQuestion = () => {
 </template>
 
 <style>
+
+	.text {
+		color: white;
+	}
 * {
 	
 	box-sizing: border-box;

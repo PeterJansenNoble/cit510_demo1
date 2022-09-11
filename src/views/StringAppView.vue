@@ -3,7 +3,9 @@
   <v-card
      :loading="loading"
      class="mx-auto my-12"
-     max-width="374"
+     max-width="500"
+     max-height="500"
+     elevation="9"
      
    >
    <v-card-title class="stringtitle"> STRING MANIPULATOR</v-card-title>

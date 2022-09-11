@@ -32,7 +32,7 @@
     </v-card-subtitle>
 
     <v-card-actions>
-        <v-btn color="orange lighten-2" href="/BasicMath"   >
+        <v-btn color="orange lighten-2" href="/basicMath"   >
   <v-icon>window</v-icon> Explore
 </v-btn>
 

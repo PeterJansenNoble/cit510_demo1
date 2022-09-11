@@ -1,6 +1,3 @@
-
-
-
 <template>
    
    <v-app class="body">
@@ -18,15 +15,6 @@
   import Navbar from '@/components/NavBar.vue';
 import Dashboard from './views/Dashboard.vue';
    
-
-  
-
-
-  
-
-  
-  
-
    
 </script>
 

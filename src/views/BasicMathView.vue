@@ -3,7 +3,9 @@
   <v-card
     :loading="loading"
     class="mx-auto my-12"
-    max-width="374"
+    max-width="500"
+    max-height="576"
+    elevation="9"
   >
   <v-card-title class="caltitle">CALCULATOR</v-card-title>
 <v-container fluid>
