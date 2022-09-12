@@ -1,346 +1,297 @@
-<script setup>
-import { ref, computed } from 'vue'
-
-const questions = ref([
-{
-	question: 'What does CPU stand for?',
-	answer: 1,
-	options: [
-		
-		'computer processing unit',
-        'central processing unit',
-		'core processing unit'
-	],
-	selected: null
-  },
-  {
-	question: 'When Gmail first launched, how much storage did it provide for your email?',
-	answer: 0,
-	options: [
-		'1GB',
-		'2GB',
-        '3GB',
-	],
-	selected: null
-  },
-  {
-	question: 'Who is often called the father of the computer?',
-	answer: 2,
-	options: [
-		'Charles Darwin',
-		'Charles Alexander',
-        'Charles Babbage',
-        
-	],
-	selected: null
-  },
-  {
-	question: 'What’s the shortcut for the “copy” function on most computers?',
-	answer: 2,
-	options: [
-		'Ctrl + Z',
-		'Ctrl + X',
-        'Ctrl + C',
-	],
-	selected: null
-  },
-  {
-	question: 'Google Chrome, Safari, Firefox, and Explorer are different types of what?',
-	answer: 0,
-	options: [
-		'Browser',
-		'Emails',
-        'Accounts',
-	],
-	selected: null
-  },
-  {
-	question: 'What year was the very first model of the iPhone released?',
-	answer: 0,
-	options: [
-		'2007',
-		'2008',
-        '2009',
-	],
-	selected: null
-  },
-  {
-	question: 'What is often seen as the smallest unit of memory?',
-	answer: 2,
-	options: [
-		'megabyte',
-		'microbyte',
-        'kilobyte',
-	],
-	selected: null
-  },
-  {
-	question: 'What is Vue?',
-	answer: 0,
-	options: [
-		'A framework',
-		'A library',
-		'A type of hat'
-	],
-	selected: null
-  },
-  {
-	question: 'What is Vuex used for?',
-	answer: 2,
-	options: [
-		'Eating a delicious snack',
-		'Viewing things',
-		'State management'
-	],
-	selected: null
-  },
-  {
-	question: 'What is Vue Router?',
-	answer: 1,
-	options: [
-		'An ice cream maker',
-		'A routing library for Vue',
-		'Burger sauce'
-	],
-	selected: null
-  }
-
-])
-
-const quizCompleted = ref(false)
-const currentQuestion = ref(0)
-const score = computed(() => {
-	let value = 0
-	questions.value.map(q => {
-		if (q.selected != null && q.answer == q.selected) {
-			console.log('correct');
-			value++
-		}
-	})
-	return value
-})
-
-const getCurrentQuestion = computed(() => {
-	let question = questions.value[currentQuestion.value]
-	question.index = currentQuestion.value
-	return question
-})
-
-const SetAnswer = (e) => {
-	questions.value[currentQuestion.value].selected = e.target.value
-	e.target.value = null
-}
-
-const NextQuestion = () => {
-	if (currentQuestion.value < questions.value.length - 1) {
-		currentQuestion.value++
-		return
-	}
-	
-	quizCompleted.value = true
-}
-</script>
-
 <template>
-    <v-card
+	 <v-card
     :loading="loading"
     class="mx-auto my-12"
     max-width="1000"
-    max-height="550"
+    max-height="750"
+    elevation="9"
   >
   <v-card-title class="caltitle">QUIZ APP</v-card-title>
-	<main class="app">
-	
-		<h1>Technology & Science Trivia Questions</h1>
-		<section class="quiz" v-if="!quizCompleted">
-			<div class="quiz-info">
-				<span class="question">{{ getCurrentQuestion.question }}</span>
-				<span class="score">Score {{ score }}/{{ questions.length }}</span>
-			</div>
-			
-			<div class="options">
-				<label 
-					v-for="(option, index) in getCurrentQuestion.options" 
-					:for="'option' + index" 
-					:class="`option ${
-						getCurrentQuestion.selected == index 
-							? index == getCurrentQuestion.answer 
-								? 'correct' 
-								: 'wrong'
-							: ''
-					} ${
-						getCurrentQuestion.selected != null &&
-						index != getCurrentQuestion.selected
-							? 'disabled'
-							: ''
-					}`">
-					<input 
-						type="radio" 
-						:id="'option' + index" 
-						:name="getCurrentQuestion.index" 
-						:value="index" 
-						v-model="getCurrentQuestion.selected" 
-						:disabled="getCurrentQuestion.selected"
-						@change="SetAnswer" 
-					/>
-					<span>{{ option }}</span>
-				</label>
-			</div>
-			
-			<v-btn block 
- 			 	elevation="9"
-  				small
- 				x-large
-  				x-small
-				color="#34495E"
-				@click="NextQuestion" 
-				:disabled="!getCurrentQuestion.selected">
-				<div class="text">
-				{{ 
-					getCurrentQuestion.index == questions.length - 1 
-						? 'Finish' 
-						: getCurrentQuestion.selected == null
-							? 'Select an option'
-							: 'Next question'
-				}}
-				</div>
-			</v-btn>
-		</section>
-
-		<section v-else>
-			<h2>You have finished the quiz!</h2>
-			<p>Your score is {{ score }}/{{ questions.length }}</p>
-		</section>
-	</main>
-</v-card>
-</template>
-
-<style>
-
-	.text {
-		color: white;
-	}
-* {
-	
-	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
-    
-}
-
-body {
-	background-color: #fcfaff;
-	color: #FFF;
-}
-
-.app {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 2rem;
-	height: 100vh;
-}
-
-h1 {
-	font-size: 2rem;
-	margin-bottom: 2rem;
-    
+	<div id="quiz-container">
+		<h1 class="titlequiz">Quiz about Sports</h1>
+	   <h5>Score: {{score}}/{{questions.length}}</h5>
+	   <!-- div#correctAnswers -->
+	   <hr class="divider" />
+	   <h3>Question: {{currentnumberQuestion}} / {{questions.length}}</h3>
+	   <div>
+		 <h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>
+		 <form v-if="currentQuestion">
+		   <button
+			 v-for="answer in currentQuestion.answers"
+			 :index="currentQuestion.key"
+			 :key="answer"
+			 v-html="answer"
+			 @click.prevent="handleButtonClick"
+		   ></button>
+		 </form>
+		 <hr class="divider" />
+	   </div>
+	 </div>
+	 </v-card>
+	 
+   </template>
+	 
+	 <script>
+   export default {
+	 name: "Quiz",
+	 // data() function stores state variables
+	 data() {
+	   return {
+		 questions: [],
+		 loading: true,
+		 index: 0,
+		 score: 0,
+		 currentnumberQuestion:1
+	   };
+	 },
+	 computed: {
+	   currentQuestion() {
+		 if (this.questions !== []) {
+		   return this.questions[this.index];
+		 }
+		 return null;
+	   },
+	 },
+	 // Custom methods of the Vue Component
+	 methods: {
+	   async fetchQuestions() {
+		 this.loading = true;
+		 let response = await fetch(
+		   "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple"
+		 );
+		 let jsonResponse = await response.json();
+		 let index = 0; // index is used to identify single answer
+		 let data = jsonResponse.results.map((question) => {
+		   // put answers on question into single array
+		   question.answers = [
+			 question.correct_answer,
+			 ...question.incorrect_answers,
+		   ];
+		   // Shuffle question.answers array
+		   for (let i = question.answers.length - 1; i > 0; i--) {
+			 const j = Math.floor(Math.random() * (i + 1));
+			 [question.answers[i], question.answers[j]] = [
+			   question.answers[j],
+			   question.answers[i],
+			 ];
+		   }
+		   // add rightAnswer and key property to each question
+		   question.rightAnswer = null;
+		   question.key = index;
+		   index++;
+		   return question;
+		 });
+		 this.questions = data;
+		 this.loading = false;
+	   },
+	   handleButtonClick: function (event) {
+		 /* Find index to identiy question object in data */
+		 let index = event.target.getAttribute("index");
    
-}
-
-.quiz {
-	background-color: #ffffff;
-	padding: 1rem;
-	width: 100%;
-	max-width: 640px;
-}
-
-.quiz-info {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 1rem;
-}
-
-.quiz-info .question {
-	color: #000000;
-	font-size: 1.25rem;
-}
-
-.quiz-info.score {
-	color: #FFF;
-	font-size: 1.25rem;
-}
-
-.options {
-	margin-bottom: 1rem;
-}
-
-.option {
-	padding: 1rem;
-	display: block;
-	background-color: #b9b9b9;
-	margin-bottom: 0.5rem;
-	border-radius: 0.5rem;
-	cursor: pointer;
-    ;
-}
-
-.option:hover {
-	background-color: #cccccc;
-}
-
-.option.correct {
-	background-color: #2cce7d;
-}
-
-.option.wrong {
-	background-color: #ff5a5f;
-}
-
-.option:last-of-type {
-	margin-bottom: 0;
-}
-
-.option.disabled {
-	opacity: 0.5;
-}
-
-.option input {
-	display: none;
-}
-
-button {
-	appearance: none;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	padding: 0.5rem 1rem;
-	background-color: #00f57a;
-	color: #ffffff;
-	font-weight: 700;
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	border-radius: 10%;
-}
-
-button:disabled {
-	opacity: 0.5;
-}
-
-h2 {
-	font-size: 2rem;
-	margin-bottom: 2rem;
-	text-align: center;
-}
-
-p {
-	color: #8F8F8F;
-	font-size: 1.5rem;
-	text-align: center;
-}
-.caltitle {
+		 let pollutedUserAnswer = event.target.innerHTML; // innerHTML is polluted with decoded HTML entities e.g ' from &#039;
+		 /* Clear from pollution with ' */
+		 let userAnswer = pollutedUserAnswer.replace(/'/, "&#039;");
+   
+		 /* Set userAnswer on question object in data */
+		 this.questions[index].userAnswer = userAnswer;
+   
+		 /* Set class "clicked" on button with userAnswer -> for CSS Styles; Disable other sibling buttons */
+		 event.target.classList.add("clicked");
+		 let allButtons = document.querySelectorAll(`[index="${index}"]`);
+   
+		 for (let i = 0; i < allButtons.length; i++) {
+		   if (allButtons[i] === event.target) continue;
+   
+		   allButtons[i].setAttribute("disabled", "");
+		 }
+   
+		 /* Invoke checkAnswer to check Answer */
+		 this.checkAnswer(event, index);
+	   },
+	   checkAnswer: function (event, index) {
+		 let question = this.questions[index];
+   
+		 if (question.userAnswer) {
+		   if (this.index < this.questions.length - 1) {
+			 setTimeout(
+			   function () {
+				 this.index += 1;
+				 this.currentnumberQuestion+=1;
+			   }.bind(this),
+			   1000
+			 );
+		   }
+		   if (question.userAnswer === question.correct_answer) {
+			 /* Set class on Button if user answered right, to celebrate right answer with animation joyfulButton */
+			 event.target.classList.add("rightAnswer");
+			 /* Set rightAnswer on question to true, computed property can track a streak out of 10 questions */
+			 this.questions[index].rightAnswer = true;
+			 this.score++;
+		   } else {
+			 /* Mark users answer as wrong answer */
+			 event.target.classList.add("wrongAnswer");
+			 this.questions[index].rightAnswer = false;
+			 /* Show right Answer */
+			 let correctAnswer = this.questions[index].correct_answer;
+			 let allButtons = document.querySelectorAll(`[index="${index}"]`);
+			 allButtons.forEach(function (button) {
+			   if (button.innerHTML === correctAnswer) {
+				 button.classList.add("showRightAnswer");
+			   }
+			 });
+		   }
+		 }
+	   },
+	 },
+	 // Code inside mounted() runs after the Component has mounted
+	 mounted() {
+	   this.fetchQuestions();
+	 },
+   };
+   </script>
+	 
+	 <style scoped>
+   #quiz-container {
+	 margin: 1rem auto;
+	 padding: 1rem;
+	 max-width: 750px;
+   }
+   
+   
+  
+.content-footer,
+.masthead-heading,
+.masthead-intro {
   text-align: center;
+}
+.titlequiz {
+	align-content: center;
+}
+.masthead {
+  padding: 6em 0;
+  
   background-size: cover;
   background-repeat: no-repeat;
-  border-top: solid 1em #1d2920;
+  border-top: solid 1em #FFCF33;
 }
-</style>
+
+.masthead-intro {
+    /* Layout Declarations */
+    margin-bottom: 0.1em;
+    /* Typography Declarations */
+    font-family: "Gentium Book Basic", Georgia, serif;
+    font-size: 2em;
+}
+
+.masthead-heading {
+    /* Layout Declarations */
+    color: #F1C863;
+    margin-top: -0.2em;
+    /* Typography Declarations */
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 6em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+   
+   h1 {
+	 font-size: 1.3rem;
+	 padding: 0.7rem;
+   }
+   
+   .divider {
+	 margin: 0.5rem 0;
+	 border-radius: 2px;
+	 box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
+   }
+   
+   form {
+	 display: flex;
+	 flex-direction: row;
+	 flex-wrap: wrap;
+	 justify-content: center;
+   }
+   
+   button {
+	 font-size: 1.1rem;
+	 box-sizing: border-box;
+	 padding: 1rem;
+	 margin: 0.3rem;
+	 width: 47%;
+	 background-color: rgba(100, 100, 100, 0.3);
+	 border: none;
+	 border-radius: 0.4rem;
+	 box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+   }
+   
+   button:hover:enabled {
+	 transform: scale(1.02);
+	 box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+	   0 3px 1px -1px rgba(0, 0, 0, 0.2);
+   }
+   
+   button:focus {
+	 outline: none;
+   }
+   
+   button:active:enabled {
+	 transform: scale(1.05);
+   }
+   
+   @keyframes flashButton {
+	 0% {
+	   opacity: 1;
+	   transform: scale(1.01);
+	 }
+	 50% {
+	   opacity: 0.7;
+	   transform: scale(1.02);
+	 }
+	 100% {
+	   opacity: 1;
+	   transform: scale(1);
+	 }
+   }
+   
+   button.clicked {
+	 pointer-events: none;
+   }
+   
+   button.rightAnswer {
+	 animation: flashButton;
+	 animation-duration: 700ms;
+	 animation-delay: 200ms;
+	 animation-iteration-count: 3;
+	 animation-timing-function: ease-in-out;
+	 color: black;
+	 background: linear-gradient(
+	   210deg,
+	   rgba(0, 178, 72, 0.25),
+	   rgba(0, 178, 72, 0.5)
+	 );
+   }
+   
+   button.wrongAnswer {
+	 color: black;
+	 background: linear-gradient(
+	   210deg,
+	   rgba(245, 0, 87, 0.25),
+	   rgba(245, 0, 87, 0.5)
+	 );
+   }
+   
+   button.showRightAnswer {
+	 animation: flashButton;
+	 animation-duration: 700ms;
+	 animation-delay: 200ms;
+	 animation-iteration-count: 2;
+	 animation-timing-function: ease-in-out;
+	 color: black;
+	 background: linear-gradient(
+	   210deg,
+	   rgba(0, 178, 72, 0.25),
+	   rgba(0, 178, 72, 0.5)
+	 );
+   }
+   </style>
