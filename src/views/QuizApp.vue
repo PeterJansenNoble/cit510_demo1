@@ -10,7 +10,7 @@
 	<div id="quiz-container">
 		<h1 class="titlequiz">Quiz about Sports</h1>
 	   <h5>Score: {{score}}/{{questions.length}}</h5>
-	   <!-- div#correctAnswers -->
+	   
 	   <hr class="divider" />
 	   <h3>Question: {{currentnumberQuestion}} / {{questions.length}}</h3>
 	   <div>
@@ -34,7 +34,7 @@
 	 <script>
    export default {
 	 name: "Quiz",
-	 // data() function stores state variables
+	 
 	 data() {
 	   return {
 		 questions: [],
@@ -52,22 +52,22 @@
 		 return null;
 	   },
 	 },
-	 // Custom methods of the Vue Component
+	
 	 methods: {
 	   async fetchQuestions() {
 		 this.loading = true;
 		 let response = await fetch(
-		   "https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple"
+		   "https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple"
 		 );
 		 let jsonResponse = await response.json();
-		 let index = 0; // index is used to identify single answer
+		 let index = 0; 
 		 let data = jsonResponse.results.map((question) => {
-		   // put answers on question into single array
+		   
 		   question.answers = [
 			 question.correct_answer,
 			 ...question.incorrect_answers,
 		   ];
-		   // Shuffle question.answers array
+		   
 		   for (let i = question.answers.length - 1; i > 0; i--) {
 			 const j = Math.floor(Math.random() * (i + 1));
 			 [question.answers[i], question.answers[j]] = [
@@ -142,6 +142,7 @@
 		   }
 		 }
 	   },
+	   
 	 },
 	 // Code inside mounted() runs after the Component has mounted
 	 mounted() {

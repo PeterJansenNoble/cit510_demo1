@@ -117,7 +117,7 @@ aside {
 }
 .noble-title {
   color: white;
-  padding-top: 35px;
+  padding-top: 5px;
 }
 .toggle-drawer {
   color: white;
