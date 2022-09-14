@@ -23,6 +23,9 @@
     <v-avatar>
       
     </v-avatar>
+    
+    <button class="signout" @click="handleSignOut" v-if="isLoggedIn">Sign Out</button>
+    
      
 
         
@@ -72,6 +75,29 @@
   
   import { ref } from 'vue'
   import logoURL from '../assets/logo.png'
+  import { onMounted } from "vue";
+  import { getAuth, onAuthStateChanged, signOut } from '@firebase/auth';
+import router from '../router';
+
+  const isLoggedIn = ref(false);
+
+  let auth;
+  onMounted(() => {
+    auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        isLoggedIn.value = true;
+      }else{
+        isLoggedIn.value = false;
+      }
+
+    });
+  });
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      router.push("/dashboard");
+    });
+  };
     
   const drawer = ref(false)
   
@@ -83,6 +109,8 @@
            { title: 'About Vuetify', icon: 'mdi-receipt', path: '/Vuetify'},
           { title: 'About Me', icon: 'mdi-face', path: '/About'},
           { title: 'About Apps', icon: 'mdi-apps', path: '/AboutApps'},
+          { title: 'Register', icon: 'mdi-apps', path: '/register'},
+          { title: 'Sign In', icon: 'mdi-apps', path: '/signIn'},
           
           
          
@@ -107,6 +135,9 @@ aside {
 
     
 }
+.signout {
+  padding-right: 2.5rem;
+}
 
 .nav-menu {
   margin: 0 -1rem;
@@ -118,6 +149,7 @@ aside {
 .noble-title {
   color: white;
   padding-top: 5px;
+  
 }
 .toggle-drawer {
   color: white;

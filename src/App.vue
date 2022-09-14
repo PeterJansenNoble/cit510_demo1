@@ -12,8 +12,9 @@
 
 <script setup>
    
-  import Navbar from '@/components/NavBar.vue';
-import Dashboard from './views/Dashboard.vue';
+  
+   import Navbar from '@/components/NavBar.vue';
+   
    
    
 </script>

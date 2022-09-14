@@ -8,7 +8,11 @@ import Dashboard from '../views/Dashboard.vue'
 import Axios from '../views/Axiosdemo.vue'
 import AboutApps from '../views/AboutApps.vue'
 import QuizApp from '../views/QuizApp.vue'
-
+import Register from '../views/Register.vue'
+import SignIn from '../views/SignIn.vue'
+import Feed from '../views/Feed.vue'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { async } from '@firebase/util'
 
 
 
@@ -18,7 +22,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Dashboard
+      component: SignIn
     },
     {
       path: '/stringApp',
@@ -56,15 +60,60 @@ const router = createRouter({
             component: AboutApps
           },
           {
-            path: '/quizapp',
-            name: 'QuizApp',
-            component: QuizApp
+            path: "/quizapp",
+            component: () => import("../views/QuizApp.vue"),
+            meta: {
+              requiresAuth: true,
+            },
           },
+          {
+            path: '/signin',
+            name: 'SignIn',
+            component: SignIn
+          },
+          {
+            path: '/register',
+            name: 'Register',
+            component: Register
+          },
+          {
+            path: '/feed',
+            name: 'Feed',
+            component: Feed
+          },
+          
           
           
     
     
   ]
 })
+const getCurrentUser = () => {
+  return new Promise ((resolve, reject) => {
+    const removeListener = onAuthStateChanged(
+      getAuth(),
+      (user) => {
+        removeListener();
+        resolve(user);
+      },
+      reject
+    );
+  }); 
+};
+
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)){
+    if (await getCurrentUser()) {
+      next();
+    }else{
+      alert("you dont have access!");
+      next("/signIn");
+    }
+
+  }else{
+    
+    next();
+  }
+});
 
 export default router
