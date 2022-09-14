@@ -13,8 +13,20 @@
 	<div id="quiz-container">
 	<center><h1>Create an Account</h1></center>
     <p class="mx-auto my-1"></p>
-    <p>Email :<input type="text" placeholder="Email" v-model="email"  /></p>
-    <p>Password : <input type="password" placeholder="Password" v-model="password"/></p>
+    <v-text-field
+                             
+                              name="login"
+                              v-model="email"
+                              label="Login"
+                              type="text"
+                           ></v-text-field>
+                           <v-text-field
+                              
+                              name="Password"
+                              v-model="password"
+                              label="Password"
+                              type="password"
+                           ></v-text-field>
 <p class="mx-auto my-1">
     <v-btn block  color="#34495E"
   elevation="1"
