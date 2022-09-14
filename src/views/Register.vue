@@ -44,6 +44,18 @@
   x-small
   @click="signInWithGoogle"><div class="resultbtn">Google Sign-In</div></v-btn>
 </p>
+<v-divider></v-divider>
+<center>
+<p class="mx-auto my-12" color="#34495E">If you have already an account sign in here.</p>
+</center>
+<p class="mx-auto my-1">
+  <v-btn block  color="#41B883"
+  elevation="1"
+  small
+  x-large
+  x-small
+  router-link to="/signin"><div class="resultbtn">Sign-In</div></v-btn>
+</p>
 
     
     </div>
@@ -96,4 +108,5 @@ const signInWithGoogle = () => {
 .h1{
     align-content: center;
 }
+
 </style>

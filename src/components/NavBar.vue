@@ -6,7 +6,7 @@
       <v-toolbar color="#41B883" class="toolbar" app>
        <v-app-bar-nav-icon @click='toggleDrawer' class="toggledrawer"></v-app-bar-nav-icon>
       <v-toolbar-title >
-        <h1 class="noble-title">Midterm Laboratory</h1>
+        <h1 class="noble-title">Final Laboratory</h1>
       </v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -24,8 +24,7 @@
       
     </v-avatar>
     
-    <button class="signout" @click="handleSignOut" v-if="isLoggedIn">Sign Out</button>
-    
+    <button  class="signout" @click="handleSignOut" v-if="isLoggedIn">Sign Out</button>
      
 
         
@@ -109,7 +108,7 @@ import router from '../router';
            { title: 'About Vuetify', icon: 'mdi-receipt', path: '/Vuetify'},
           { title: 'About Me', icon: 'mdi-face', path: '/About'},
           { title: 'About Apps', icon: 'mdi-apps', path: '/AboutApps'},
-          { title: 'Register', icon: 'mdi-apps', path: '/register'},
+          { title: 'Register', icon: 'fa-solid fa-user fa-2x', path: '/register'},
           { title: 'Sign In', icon: 'mdi-apps', path: '/signIn'},
           
           
