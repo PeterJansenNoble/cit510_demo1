@@ -32,7 +32,7 @@
     </v-card-subtitle>
 
     <v-card-actions>
-        <v-btn color="orange lighten-2" href="/basicMath"   >
+        <v-btn color="orange lighten-2" router-link to="/basicMath"   >
   <v-icon>window</v-icon> Explore
 </v-btn>
 
@@ -81,7 +81,7 @@
     </v-card-subtitle>
 
     <v-card-actions>
-        <v-btn color="orange lighten-2" href="/StringApp"   >
+        <v-btn color="orange lighten-2" router-link to="/StringApp"   >
   <v-icon>window</v-icon> Explore
 </v-btn>
 
@@ -131,7 +131,7 @@
     </v-card-subtitle>
 
     <v-card-actions>
-        <v-btn color="orange lighten-2" href="/QuizApp"   >
+        <v-btn color="orange lighten-2" router-link to="/QuizApp"   >
   <v-icon>window</v-icon> Explore
 </v-btn>
 
@@ -181,7 +181,7 @@
     </v-card-subtitle>
 
     <v-card-actions>
-        <v-btn color="orange lighten-2" href="/Vuetify"   >
+        <v-btn color="orange lighten-2" router-link to="/Vuetify"   >
   <v-icon>window</v-icon> Explore
 </v-btn>
 

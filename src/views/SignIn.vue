@@ -6,7 +6,8 @@
       sm="6"
     >
     <v-card max-width="2000"
-        max-height="930">
+        max-height="930"
+        elevation="10">
         <div class="intro1">
             <h1> Login to your Account</h1>
     

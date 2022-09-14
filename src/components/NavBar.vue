@@ -24,7 +24,7 @@
       
     </v-avatar>
     
-    <button  class="signout" @click="handleSignOut" v-if="isLoggedIn">Sign Out</button>
+    <button  class="signout" @click="handleSignOut" v-if="isLoggedIn"  icon="fa-solid fa-right-to-bracket">Sign Out</button>
      
 
         
@@ -104,12 +104,15 @@ import router from '../router';
            { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/Dashboard' },
            { title: 'Basic Math', icon: 'mdi-calculator', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-code-string', path: '/stringApp'},
-           { title: 'Quiz App', icon: 'mdi-help', path: '/QuizApp'},
+           { title: 'Quiz App', icon: 'mdi-help', path: '/quizappmodal'},
+           
            { title: 'About Vuetify', icon: 'mdi-receipt', path: '/Vuetify'},
           { title: 'About Me', icon: 'mdi-face', path: '/About'},
           { title: 'About Apps', icon: 'mdi-apps', path: '/AboutApps'},
-          { title: 'Register', icon: 'fa-solid fa-user fa-2x', path: '/register'},
-          { title: 'Sign In', icon: 'mdi-apps', path: '/signIn'},
+          { title: 'Register', icon: 'fa-solid fa-address-card', path: '/register'},
+          { title: 'Sign In', icon: 'fa-solid fa-user', path: '/signIn'},
+          
+          
           
           
          

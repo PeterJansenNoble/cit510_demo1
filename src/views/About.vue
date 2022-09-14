@@ -34,15 +34,7 @@
     <p>Because programming is awesome and programming for the internet is even more awesome.</p>
 </section>
 
-<footer class="content-footer">
-    <p>Say hi to me on these social networks:</p>
-    <ul class="social">
-        <li><a class="css-is-deranged" href="_INSERT_GITHUB_URL_HERE_">GitHub</a></li>
-        <li><a class="css-is-deranged" href="_INSERT_TWITTER_URL_HERE_">Twitter</a></li>
-        <li><a class="css-is-deranged" href="_INSERT_GOOGLE+_URL_HERE_">Google+</a></li>
-    </ul>
-  
-</footer>
+
   </main>
 </template>
 

@@ -66,6 +66,14 @@ const router = createRouter({
               requiresAuth: true,
             },
           },
+
+          {
+            path: "/quizappmodal",
+            component: () => import("../views/QuizAppModal.vue"),
+            meta: {
+              requiresAuth: true,
+            },
+          },
           {
             path: '/signin',
             name: 'SignIn',
@@ -81,6 +89,7 @@ const router = createRouter({
             name: 'Feed',
             component: Feed
           },
+         
           
           
           

@@ -11,6 +11,9 @@
   <v-container fluid>
     
 	<div id="quiz-container">
+        <div style="text-align: center;">
+            <i class="fa-solid fa-user-plus fa-5x"></i>
+</div>
 	<center><h1>Create an Account</h1></center>
     <p class="mx-auto my-1"></p>
     <v-text-field
@@ -45,6 +48,7 @@
   @click="signInWithGoogle"><div class="resultbtn">Google Sign-In</div></v-btn>
 </p>
 <v-divider></v-divider>
+
 <center>
 <p class="mx-auto my-12" color="#34495E">If you have already an account sign in here.</p>
 </center>

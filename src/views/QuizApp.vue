@@ -9,6 +9,15 @@
   <v-card-title class="caltitle">QUIZ APP</v-card-title>
 	<div id="quiz-container">
 		<h1 class="titlequiz">Quiz about Sports</h1>
+		<div class="correctAnswers">
+
+  You have
+  <strong>{{ correctAnswers }} correct {{ pluralizeAnswer }}!</strong>
+</div>
+<div class="correctAnswers">
+  Currently at question {{ index + 1 }} of {{ questions.length }}
+</div>
+
 	   <h5>Score: {{score}}/{{questions.length}}</h5>
 	   
 	   <hr class="divider" />
@@ -27,7 +36,9 @@
 		 <hr class="divider" />
 	   </div>
 	 </div>
+	 
 	 </v-card>
+	 
 	 
    </template>
 	 
@@ -45,6 +56,7 @@
 	   };
 	 },
 	 computed: {
+		
 	   currentQuestion() {
 		 if (this.questions !== []) {
 		   return this.questions[this.index];
@@ -149,6 +161,7 @@
 	   this.fetchQuestions();
 	 },
    };
+   
    </script>
 	 
 	 <style scoped>

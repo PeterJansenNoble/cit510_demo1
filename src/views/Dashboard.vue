@@ -3,10 +3,24 @@
 	<main id="Home-page">
 		<main>
   <div class="intro">
-    <h1> MIDTERM PROJECT</h1>
-    <h1>DASHBOARD</h1>
+    <h1> FINAL LABORATORY</h1>
+    <h1>Dashboard</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    
+   
     <p>Hi, My Name is Noble Peter Jansen.</p>
-    <button>Learn More</button>
+    
+    <v-btn elevation="9" color="#41B883" router-link to="/aboutapps" class="learnmore">Learn More</v-btn>
   </div>
   
   
@@ -18,6 +32,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
 
 .url {
     max-width: 100%;
@@ -63,7 +78,7 @@ body {
   align-items: center;
   width: 100%;
   height: 1000px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../assets/dashboard.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.178) 0%, rgba(0, 0, 0, 0.164) 100%), url("https://images.hdqwalls.com/wallpapers/vue-js-kk.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,7 +101,7 @@ body {
 }
 
 .intro button {
-  background-color: #34495E;
+  background-color: #ffffff;
   color: rgb(255, 255, 255);
   padding: 10px 25px;
   border: none;
