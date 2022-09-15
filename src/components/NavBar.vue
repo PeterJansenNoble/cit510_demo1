@@ -94,7 +94,7 @@ import router from '../router';
   });
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      router.push("/dashboard");
+      router.push("/signin");
     });
   };
     

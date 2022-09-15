@@ -20,14 +20,14 @@
                              
                               name="login"
                               v-model="email"
-                              label="Login"
+                              label="Enter your email"
                               type="text"
                            ></v-text-field>
                            <v-text-field
                               
                               name="Password"
                               v-model="password"
-                              label="Password"
+                              label="Enter your Password"
                               type="password"
                            ></v-text-field>
 <p class="mx-auto my-1">

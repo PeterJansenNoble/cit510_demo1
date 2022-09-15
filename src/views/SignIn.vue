@@ -122,6 +122,7 @@ const register = () => {
    signInWithEmailAndPassword(getAuth(), email.value, password.value)
    .then((data) => {
        console.log("Succesfully signed in!");
+       
        router.push('/dashboard')
    })
    .catch((error) => { 
