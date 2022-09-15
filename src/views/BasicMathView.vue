@@ -1,12 +1,14 @@
 <template>
-  
+  <div class="body">
   <v-card
+  
     :loading="loading"
     class="mx-auto my-12"
     max-width="500"
     max-height="576"
     elevation="9"
   >
+  
   <v-card-title class="caltitle">CALCULATOR</v-card-title>
 <v-container fluid>
   <v-text-field label="First Input" v-model.number="fNumber"></v-text-field>
@@ -45,6 +47,8 @@ RESULT :
 
 </v-container>
 </v-card>
+
+</div>
  </template>
 
 <script setup>
@@ -95,8 +99,11 @@ RESULT :
 }
 
 .body {
-  background-color: rgb(255, 255, 255);
+  
+  
 }
+
+
 </style>
 
 

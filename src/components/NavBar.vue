@@ -104,9 +104,9 @@ import router from '../router';
            { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/Dashboard' },
            { title: 'Basic Math', icon: 'mdi-calculator', path: '/basicMath' },
            { title: 'String App', icon: 'mdi-code-string', path: '/stringApp'},
-           { title: 'Quiz App', icon: 'mdi-help', path: '/quizappmodal'},
+           { title: 'Quiz App', icon: 'fa-solid fa-question', path: '/quizappmodal'},
            
-           { title: 'About Vuetify', icon: 'mdi-receipt', path: '/Vuetify'},
+           { title: 'About Vuetify', icon: 'fa-brands fa-vuejs', path: '/Vuetify'},
           { title: 'About Me', icon: 'mdi-face', path: '/About'},
           { title: 'About Apps', icon: 'mdi-apps', path: '/AboutApps'},
           { title: 'Register', icon: 'fa-solid fa-address-card', path: '/register'},
